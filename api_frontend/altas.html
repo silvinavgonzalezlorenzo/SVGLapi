@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alta de socios</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+</head>
+
+<body>
+    <main class="container">
+
+        <div>
+            <a href="index.html" role="button">Volver al menú</a>
+        </div>
+
+        <br />
+        <div>
+            <h1>Alta de socios</h1>
+
+            <form id="registroClub" method="POST" enctype="multipart/form-data">
+                <label for="nombre">Nombre</label>
+                <input type="text" name="nombre" id="nombre" required>
+
+                <label for="apellido">Apellido</label>
+                <input type="text" name="apellido" id="apellido" required>
+
+                <label for="tel">Teléfono</label>
+                <input type="number" name="tel" id="tel" value="0" required>
+
+                <label for="ciudad">Ciudad</label>
+                <input type="text" name="ciudad" id="ciudad">
+
+                <label for="pais">País</label>
+                <input type="text" name="pais" id="pais">
+
+                <button type="submit">Enviar</button>
+                <button type="reset" class="secondary">Limpiar</button>
+
+            </form>
+        </div>
+    </main>
+
+    <script src="./js/altas.js"></script>
+
+</body>
+
+</html>

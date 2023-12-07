@@ -1,0 +1,93 @@
+/* R E G I S T R O*/ 
+.contenedorRegistro h2 {
+  text-align: center;
+  margin: 10px;
+  padding-top: 20px; /*separación header-h2*/
+}
+
+/*Regístrate al club de lectura en inglés*/
+.contenedorRegistro h3 { 
+  color: darkblue; 
+  font-size: 16px;
+  padding-bottom: 10px; /*para separar desde este punto de ref. hacia abajo*/
+}
+
+.contenedorRegistro {
+  /*Book Club*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 400px;
+  width: 100%;
+  justify-content: center;
+  background-color: rgb(240, 240, 201);;
+  padding: 10px;
+  padding-top: 10px; /*sobreescribe la propiedad anterior*/
+  border: none;
+  line-height: 20px;
+  text-align: center;
+  margin: 20px auto;
+  margin-bottom: 20px; /*separación con el footer*/
+}
+
+.linea {
+  margin-bottom: 10px; /*separación entrelíneas*/
+  line-height: 40px; /*altura interior línea*/
+}
+
+.linea label { /*ancho = de líneas*/
+  display: inline-block;
+  width: 100px; 
+  font-weight: bold;
+}
+
+.linea input { /* alto = de líneas*/
+  line-height: 30px;
+  width: calc(100% - 110px);
+  outline: 1px solid rgb(8, 255, 8);
+  border: none;
+  padding: 5px;
+}
+
+.boton {
+  display: block;
+  width: 60%;
+  margin: 20px auto;
+  flex-direction: column;
+  align-items: center;
+  height: 45px;
+  line-height: 45px;
+  width: 20%; 
+  background-color: white; 
+  color: orangered; 
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 20px; /*separación con el footer.*/
+}
+
+.boton:hover {
+  background-color: brown;
+  color: yellow;
+}
+
+/*Responsive - media queries*/
+/*MOBILE - small devices*/
+@media (max-width: 768px) {
+  .contenedorRegistro {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .contenedorRegistro,
+  .boton {
+    grid-column: 1;
+  }
+  .boton {
+    width: 60%;
+  }
+}
+
+/*Versión actual: 07.12.23*/

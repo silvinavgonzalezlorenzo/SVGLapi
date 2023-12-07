@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SilvinaVGonzalezLorenzo</title>
+    <script
+      src="https://kit.fontawesome.com/e15e8c34af.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../assets/css/styles.css" />
+                              
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+    />
+  </head>
+
+  <body>
+
+    <header class="navbar">
+      <img
+        src="../images/Home/SVGL_Logo.png"
+        class="logo-membrete"
+        style="border: 0"
+      />
+      <nav class="navbar-menu">
+        <ul>
+          <li>
+            <a href="../index.html">
+              <i class="fa-solid fa-house fa-beat" style="color: #a52a2a">
+                <p class="texto-ícono">Home</p></i
+              ></a
+            >
+          </li>
+          <li>
+            <a href="./skills.html"
+              ><i class="fa-solid fa-graduation-cap" style="color: #a52a2a">
+                <p class="texto-ícono">Perfil</p></i
+              ></a
+            >
+          </li>
+          <li>
+            <a href="./projects.html"
+              ><i class="fa-solid fa-school" style="color: #a52a2a">
+                <p class="texto-ícono">Aula virtual</p></i
+              ></a
+            >
+          </li>
+          <li>
+            <a href="./contact.html"
+              ><i class="fa-solid fa-location-dot" style="color: #a52a2a">
+                <p class="texto-ícono">Contacto</p></i
+              ></a>
+          </li>
+          <li>
+            <a href="registroClub.html"
+              ><i class="fa-solid fa-circle-info" style="color: #a52a2a">
+                <p class="texto-ícono">Club</p></i
+              ></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="contenedorRegistro">  <!--nuevo: por css-->
+        <h2>Book Club</h2>
+        <h3>Regístrate al club de lectura en inglés</h3>
+        
+        <form name="registroClub" method="POST" netlify>
+
+          <div class="linea">
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              name="nombre"
+              id="nombre"
+              placeholder="Ridley"
+              minlength="3"
+              required
+              maxlength="25"
+              size="25"
+            />
+          </div>
+      
+          <div class="linea">
+            <label for="apellido">Apellido</label>
+            <input
+              type="text"
+              name="apellido"
+              id="apellido"
+              placeholder="Scott"
+              minlength="3"
+              required
+              maxlength="25"
+              size="25"
+            />
+          </div>
+
+          <div class="linea">
+            <label for="tel">Teléfono</label>
+            <input
+              type="number"
+              name="tel"
+              id="tel"
+              placeholder="4437144445555"
+              required
+              size="25"
+            />
+          </div>
+
+          <div class="linea">
+            <label for="ciudad">Ciudad</label>
+            <input
+              type="text"
+              name="ciudad"
+              id="ciudad"
+              placeholder="London"
+              size="25"
+            />
+          </div>
+
+          <div class="linea">
+            <label for="pais">País</label>
+            <input 
+              type="text" 
+              name="pais" 
+              id="pais" 
+              placeholder="Inglaterra"
+              size="25" 
+              />
+          </div>
+          
+          <p>
+            <button type="submit" class="boton">Send</button>
+          </p> <!--nuevo: class="boton" x el css-->
+        </form>
+      </div>
+    </main>    
+
+    <footer>
+      <ul>
+        <li>
+          <a
+            class="redsoc"
+            href="https://www.linkedin.com/in/silvina-v-gonzalez-lorenzo"
+            target="_blank"
+            ><i class="fa fa-linkedin" aria-hidden="true"></i
+          ></a>
+        </li>
+        <li>
+          <a 
+            class="redsoc"
+            href="https://www.youtube.com/@SILVINAVGONZALEZLORENZO"
+            target="_blank"
+            ><i class="fa fa-youtube" aria-hidden="true"></i
+          ></a>
+        </li>
+      </ul>
+      <p class="texto-footer"><i class="fa-regular fa-copyright fa-fade" style="color: #ff4500"></i> 2023 Silvina V. González Lorenzo</p>
+      <p class="texto-footer">
+        Developed exclusively for Silvina V. González Lorenzo</p>
+      <p class="texto-footer2">Prohibida su reproducción total o parcial (Ley 11723)</p>
+    </footer>
+  </body>
+</html>
+
+<!--Versión actual: 07.12.23-->
