@@ -21,8 +21,8 @@ class Catalogo:
         self.cursor.execute(f"USE `{database}`")
         
             
-    def agregar_socio(self, nombre, apellido, telefono, ciudad, pais):
-        sql = "INSERT INTO `sistemaclub`.`socios` (`nombre`, `apellido`, `telefono`, `ciudad`, `pais` ) VALUES (" + nombre + ", " + apellido + ", " + telefono + ", " + ciudad + ", " + pais + ");"
+    def agregar_socio(self, nombre, apellido, tel, ciudad, pais):
+        sql = "INSERT INTO `sistemaclub`.`socios` (`nombre`, `apellido`, `tel`, `ciudad`, `pais` ) VALUES (" + nombre + ", " + apellido + ", " + tel + ", " + ciudad + ", " + pais + ");"
     
         self.cursor.execute(sql)
         self.conn.commit()
@@ -40,8 +40,8 @@ class Catalogo:
         socio = self.cursor.fetchone()
         return socio
         
-    def modificar_socio(self, codigo, nombre, apellido, telefono):
-        sql = "UPDATE `sistemaclub`.`socio` SET `nombre` = '" + nombre + "', `apellido` = " + apellido + ", `telefono` = " + telefono + " WHERE (`id` = " + str(codigo) + ");"
+    def modificar_socio(self, codigo, nombre, apellido, tel):
+        sql = "UPDATE `sistemaclub`.`socio` SET `nombre` = '" + nombre + "', `apellido` = " + apellido + ", `tel` = " + tel + " WHERE (`id` = " + str(codigo) + ");"
         self.cursor.execute(sql)
         self.conn.commit()
         return True
@@ -63,10 +63,10 @@ catalogo = Catalogo(host='localhost', user='root', password='', database='sistem
 def agregar_socio():
     
     nombre = request.form['nombre']
-    precio = request.form['precio']
-    stock = request.form['stock']
+    apellido = request.form['apellido']
+    tel = request.form['tel']
     
-    si_se_agrego = catalogo.agregar_socio(nombre, precio, stock)
+    si_se_agrego = catalogo.agregar_socio(nombre, apellido, tel)
     if si_se_agrego:
         return jsonify({"mensaje": "socio agregado"}), 200 # ESTO ES UNA RESPUESTA HTTP OK
     else:
@@ -93,10 +93,10 @@ def traer_socio_por_id(codigo):
 @app.route("/socios/<int:codigo>", methods=["PUT"])
 def modificar_socio(codigo):    
     nombre = request.form['nombre']
-    precio = request.form['precio']
-    stock = request.form['stock']
+    apellido = request.form['apellido']
+    tel = request.form['tel']
     
-    si_se_modifico = catalogo.modificar_socio(codigo, nombre, precio, stock)
+    si_se_modifico = catalogo.modificar_socio(codigo, nombre, apellido, tel)
     if si_se_modifico:
         return jsonify({"mensaje": "socio modificado"}), 200
     else:
@@ -104,3 +104,5 @@ def modificar_socio(codigo):
 
 if __name__ == '__main__':
     app.run(port=5000, debug=True)
+    
+    
