@@ -15,7 +15,7 @@ documento.addEventListener('submit', e => {
      .then(data => { // Mostrar los datos en consola
         console.log(data);
         alert('Socio agregado correctamente');
-        window.location.href = 'index.html' // Redireccionar a index.html
+        window.location.href = 'index.html' // Redireccionar al index.html de la interfaz ADMIN
     })
 
 })

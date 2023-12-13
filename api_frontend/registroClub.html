@@ -8,7 +8,7 @@
       src="https://kit.fontawesome.com/e15e8c34af.js"
       crossorigin="anonymous"
     ></script>
-    <link rel="stylesheet" href="./Styles/_registroClub.css" />
+    <link rel="stylesheet" href="./assets/css/styles.css" />
                               
     <link
       rel="stylesheet"
@@ -27,7 +27,7 @@
 
     <header class="navbar">
       <img
-        src="../images/Home/SVGL_Logo.png"
+        src="./images/SVGL_Logo.png"
         class="logo-membrete"
         style="border: 0"
       />
@@ -72,10 +72,10 @@
 
     <main>
       <div class="contenedorRegistro">  <!--nuevo: por css-->
-        <h2>Book Club</h2>
+        <h2>Book Club <i class="fa-solid fa-people-group" style="color: #00008b;"></i></h2> 
         <h3>Regístrate al club de lectura en inglés</h3>
         
-        <form name="registroClub" method="POST" netlify>
+        <form id="registroClub" method="POST">
 
           <div class="linea">
             <label for="nombre">Nombre</label>
@@ -123,7 +123,7 @@
               type="text"
               name="ciudad"
               id="ciudad"
-              placeholder="London"
+              placeholder="Londres"
               size="25"
             />
           </div>
@@ -170,7 +170,10 @@
         Developed exclusively for Silvina V. González Lorenzo</p>
       <p class="texto-footer2">Prohibida su reproducción total o parcial (Ley 11723)</p>
     </footer>
+
+    <script src="./JS/altas.js"></script>
+
   </body>
 </html>
 
-<!--Versión actual: 07.12.23-->
+<!--Versión actual: 10.12.23-->

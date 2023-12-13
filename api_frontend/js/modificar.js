@@ -3,16 +3,16 @@ const URL = "http://localhost:5000"
 const queryString = window.location.search; // Obtener la query string de la URL
 const urlParams = new URLSearchParams(queryString); // Obtener los parámetros de la query string
 
-const id = urlParams.get('codigo'); // Obtener el código del socio
+const idsisclub = urlParams.get('idsisclub'); // Obtener el código del socio
 
-fetch(URL + '/socios/' + id) // Obtener el socio
+fetch(URL + '/socios/' + idsisclub) // Obtener el socio
 .then(res => res.json()) // Convertir la respuesta a JSON
 .then(data => { // Mostrar los datos en consola
     console.log(data);
-    document.getElementById('codigo').value = data[0];
+    document.getElementById('idsisclub').value = data[0];
     document.getElementById('nombre').value = data[1];
     document.getElementById('apellido').value = data[2];
-    document.getElementById('telefono').value = data[3];
+    document.getElementById('tel').value = data[3];
     document.getElementById('ciudad').value = data[4];
     document.getElementById('pais').value = data[5];
 });
@@ -24,8 +24,8 @@ documento.addEventListener('submit', e => {
 
     const formData = new FormData(documento); // Obtener los datos del formulario
 
-    fetch(URL + '/socios/' + id, { // Enviar los datos al servidor
-        method: 'PUT', // Metodo de envio
+    fetch(URL + '/socios/' + idsisclub, { // Enviar los datos al servidor
+        method: 'POST', // Metodo de envio
         body: formData // Los datos del formulario
     })
      .then(res => res.json()) // Convertir la respuesta a JSON

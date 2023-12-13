@@ -1,0 +1,74 @@
+/* NavBar*/
+.navbar {
+  /*sólo la barra per se*/
+  display: flex; /*así el contenedor va mejor*/
+  background-color: var(--bg-color); 
+  align-items: center;
+  justify-content: center; 
+  padding: 10px 20px; 
+  width: 100%;
+  max-width: 1200px; /*igual que el footer*/
+  margin: 0 auto; /*para limitar el ancho y centrar*/
+  position: sticky; /*es lo mismo que top: 0px; -que estaba antes-*/
+  top: 0;
+  z-index: 1000; /*así la barra se ve "arriba" de lo demás al bajar*/
+  
+}
+
+.logo-membrete {
+  /*logo*/
+  width: 6%;
+  height: auto;
+  margin-right: 5%; /*New 05.11.23: así separo el logo del Home*/
+}
+
+.navbar-menu ul {
+  /*menú en la barra en general*/
+  display: flex;
+  /*New 05.11.23: no parece hacer falta: flex-direction: row;*/
+  gap: 35px;
+  /*transition: background-color 0.3s ease; /*No va acá*/
+}
+
+.navbar-menu ul li a {
+  /*para los links del menú*/
+  color: var(--primary-color);
+  font-weight: bold; /*new 03.11.23*/
+  text-decoration: none; /*New 05.11.23*/
+  /*transition: color 0.3s ease; /*New 05.11.23: para unificar con los otros hover. No me gusta.*/
+}
+
+.texto-ícono {
+  /*NEW*/
+  color: orangered; 
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+}
+
+.sticky {
+  /*position: fixed -> recomendado por w3schools para fixed nav y sticky nav*/
+  position: sticky; /*Antes 05.11.23: fixed;*/
+  top: 0;
+  width: 100%;
+  background-color: var(--bg); /*Cuando se haga "sticky", sigue el color*/
+}
+
+/*New 05.11.23: responsive design --> Teóricamente responsives con pantalla rotada también*/
+
+/*PC ESCRITORIO: ya estaría "user-friendly" con los parámetros de arriba, but...*/
+@media screen and (min-width: 769px) {
+  /*Le confirmo el breakpoint*/
+}
+
+/*CELULAR*/ /*Emulados del projects.css, pero sólo marco el breakpoint*/
+@media screen and (max-width: 480px) {
+}
+
+/*TABLET*/ /*Again, sólo breakpoint*/
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .navbar-menu ul {
+    gap: 28px;
+  }   
+}
+/*Nota: el 09.11.23 aprendí sobre MOBILE FIRST (golden rule developer). 
+Los parámetros arriba descriptos son anteriores.*/

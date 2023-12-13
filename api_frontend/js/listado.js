@@ -8,13 +8,16 @@ fetch(URL + '/socios') // Obtener los socios
        let html = ''; // Variable para guardar el HTML
 
        data.forEach(element => {
-        //Bucktick `` para concatenar , interpolacion de variables ${}
-        html = html + `<tr>
+        //Bucktick `` para concatenar, interpolacion de variables ${}
+        html = html + `<tr> 
             <td>${element[0]}</td>
             <td>${element[1]}</td>
             <td>${element[2]}</td>
             <td>${element[3]}</td>
-            <td><a href="modificar.html?codigo=${element[0]}">Modificar</a></td>
+            <td>${element[4]}</td>
+            <td>${element[5]}</td>
+
+            <td><a href="modificar.html?idsisclub=${element[0]}">Modificar</a></td>
             <td><button class="alert" onclick="eliminar(${element[0]});">Eliminar</button></td>
         </tr>`;
        });

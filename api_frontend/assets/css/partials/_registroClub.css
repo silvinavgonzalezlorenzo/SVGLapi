@@ -1,5 +1,6 @@
 /* R E G I S T R O*/ 
 .contenedorRegistro h2 {
+  color: darkblue;
   text-align: center;
   margin: 10px;
   padding-top: 20px; /*separación header-h2*/
@@ -7,7 +8,7 @@
 
 /*Regístrate al club de lectura en inglés*/
 .contenedorRegistro h3 { 
-  color: darkblue; 
+  color: orangered; 
   font-size: 16px;
   padding-bottom: 10px; /*para separar desde este punto de ref. hacia abajo*/
 }
@@ -38,6 +39,7 @@
 .linea label { /*ancho = de líneas*/
   display: inline-block;
   width: 100px; 
+  color: darkblue; 
   font-weight: bold;
 }
 
@@ -51,19 +53,21 @@
 
 .boton {
   display: block;
-  width: 60%;
-  margin: 20px auto;
-  flex-direction: column;
-  align-items: center;
+  width: 100%;
+  max-width:180px;
   height: 45px;
-  line-height: 45px;
-  width: 20%; 
-  background-color: white; 
-  color: orangered; 
   font-size: 16px;
   font-weight: bold;
+  padding: 5px 10px; /*ancho y alto más chicos*/
+  margin-top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background-color: white; 
+  color: orangered; 
   border: none;
   border-radius: 5px;
+  /*line-height: 45px;*/
   cursor: pointer;
   transition: background-color 0.3s ease;
   margin-bottom: 20px; /*separación con el footer.*/
