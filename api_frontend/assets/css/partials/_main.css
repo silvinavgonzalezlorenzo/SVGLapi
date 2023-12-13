@@ -1,0 +1,284 @@
+/*Mi font family elegida (nota para mejorar la accesibilidad)*/
+html {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+  font: darkblue;
+}
+
+/*New 11.11.23: Estilo para cada encabezado*/
+h1 {
+  font-size: 26px;
+}
+h2 {
+  font-size: 20px;
+  padding-top: 20px;
+}
+h3 {
+  font-size: 18px;
+  margin: 15px 0 5px 0;
+  /*text-align: center;*/
+}
+
+/* New 10.11.23 */
+main {
+  /*creado especialmente para contener tantos íconos justo como los quiero*/
+  max-width: 1200px;
+  margin: auto;
+  /*padding: 20px; /*separación en todo el perímetro*/
+  box-sizing: border-box; /*padding y border en el tamaño de la caja*/
+  text-align: center; /*New 11.11.23: centrado del contenido*/
+}
+
+/*New 10.11.23*/
+.bio-container-padre {
+  display: flex;
+  justify-content: center; /*New 10.11.23*/
+  flex-wrap: wrap;
+  /*justify-content: space-around; /*Antes: space-around p/ mantenerlo en una sola línea; Antes: center*/
+  margin-top: 20px;
+  margin-bottom: 20px; /*new 04.11.23*/
+}
+
+/*Nuevo 11.11.23: style para hijos*/
+.bio-responsive-hijo-1,
+.bio-responsive-hijo-2,
+.bio-responsive-hijo-3,
+.bio-responsive-hijo-4,
+.bio-responsive-hijo-5,
+.bio-responsive-hijo-6,
+.bio-responsive-hijo-7,
+.bio-responsive-hijo-8 {
+  flex: 1 1 calc(50% - 20px);
+  text-align: center;
+  margin: 10px; /*el margen de separación entre ítems*/
+  padding: 5%; /*padding para el contenido interior*/
+  box-sizing: border-box; /*W3S: border y padding están incluidos en width y height. No incluye margin.*/
+  background-color: transparent; /*para que se aprecie mejor*/
+}
+
+.imagen-bio {
+  /*"bio" new 10.11.23*/
+  width: 100%; /*New 08.11.23. Antes 70%*/
+  max-width: 200px; /*11.11.23: Antes 200px;300px; responsive con el container*/
+  height: auto; /*New 08.11.23*/
+}
+/*mayor tamaño interior para las cajas con texto imágenes 2,7 y 8*/
+.bio-responsive-hijo-2 .imagen-bio,
+.bio-responsive-hijo-7 .imagen-bio,
+.bio-responsive-hijo-8 .imagen-bio {
+  max-width: 320px;
+}
+/*New 10.11.23*/
+.caption-bio {
+  text-align: center;
+  color: orangered;
+  font-size: 16px;
+  margin: 5px 0; /*5 arriba, 5 abajo, 0 el resto*/
+}
+
+.botón-about-me {
+  /*New 08.11.23*/
+  display: block;
+  width: 100%; /*la forma de contener el tamaño del botón s/ el contenido*/
+  max-width: 180px; /*para limitar el ancho posible*/
+  font-size: 14px; /*achica un poco el botón*/
+  font-weight: bold; /*negrita*/
+  padding: 5px 10px;
+  text-align: center; /*centrado dentro del botón*/
+  margin-top: 0; /*new 10.11.23. Antes: 5%;*/
+  margin-left: auto; /*centrado horizontal*/
+  margin-right: auto; /*centrado horizontal*/
+  /*margin-bottom: 5%; /*separación desde el borde ext. del botón con el footer*/
+  background-color: rgb(240, 240, 201);
+  color: orangered;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease; /*color 0.3s ease; /*same as projects.css*/
+  /*overflow: hidden; /*para evitar desbordes*/
+}
+
+.botón-about-me:hover {
+  /*New 08.11.23*/
+  background-color: brown;
+  color: yellow; /*sí reacciona desde acá*/
+}
+
+/*New 13.11.23: ANIMACIÓN: loading-bar para acompañar la API*/
+.loader {
+  /*Loading*/
+  font-size: 18px;
+  font-family: Roboto, sans-serif;
+  font-weight: bold;
+  display: inline-block;
+  color: orangered; /* Change color to orangered */
+  text-align: center;
+  letter-spacing: 2px;
+  position: relative;
+  box-sizing: border-box;
+}
+.loader::after {
+  /*Loading*/
+  content: "My Word of the Year 2023...";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: white;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  box-sizing: border-box;
+  animation: animloader 6s linear infinite;
+}
+@keyframes animloader {
+  /*Loading*/
+  0% {
+    height: 100%;
+  }
+  100% {
+    height: 0%;
+  }
+}
+
+/*estilo logo Merriam-Webster
+ #merriamWebsterLogo {
+  max-width: 100%; /*dentro del contenedor
+  display: block; /*para que no herede estilos no deseados
+  margin: 0 auto; /*centrado horizontal
+}*/
+
+/* animación fade-in
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}*/
+
+/*API CONTAINER*/
+#definitionContainer {
+  /*14.11.23: antes definition-container, pero este nombre de variable falla en .js*/
+  max-width: 350px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white;
+  border: 2px solid red;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.wordContainer {
+  display: none; /*para ocultar el container al principio*/
+  max-width: 350px; /*ancho máximo */
+  margin: 20px auto; /*centrar contenedor*/
+  padding: 20px;
+  background-color: white;
+  /*rectángulo interior al estilo Merriam-Webster*/
+  border: 2px solid red;
+  padding: 10px;
+  border-radius: 8px; /*redondeo de bordes símil Merriam-Webster*/
+  /*Centrado:*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/*cabezal emulando el estilo Merriam-Webster*/
+.wordoftheYear {
+  /*color: white;*/
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/*vocablo emulando el estilo Merriam-Webster*/
+/*Ahora a cargo de apis.js
+.word, 
+.word p {
+  color: darkblue;
+  font-size: 18px;
+  font-weight: bold;
+}*/
+
+/*API + ANIMACIÓN*/
+/*definición emulando el estilo Merriam-Webster*/
+#definition,
+.definition {
+  color: white;
+  font-size: 16px;
+}
+
+/*Nuevo 10.11.23*
+Responsive de contenedores hijos con pantallas más grandes*/
+@media screen and (min-width: 769px) {
+  .bio-responsive-hijo-1,
+  .bio-responsive-hijo-2,
+  .bio-responsive-hijo-3,
+  .bio-responsive-hijo-4,
+  .bio-responsive-hijo-5,
+  .bio-responsive-hijo-6,
+  .bio-responsive-hijo-7,
+  .bio-responsive-hijo-8 {
+    flex: 1 1 calc(50% - 20px);
+  }
+}
+/*CELULAR 11.11.23*/
+@media screen and (max-width: 480px) {
+  .bio-responsive-hijo-1,
+  .bio-responsive-hijo-2,
+  .bio-responsive-hijo-3,
+  .bio-responsive-hijo-4,
+  .bio-responsive-hijo-5,
+  .bio-responsive-hijo-6,
+  .bio-responsive-hijo-7,
+  .bio-responsive-hijo-8 {
+    width: calc(100% - 20px);
+    padding-bottom: 75%;
+  }
+}
+
+/*responsive para las imágenes 2, 7 y 8 en celulares*/
+@media screen and (max-width: 768px) {
+  .bio-responsive-hijo-2 .imagen-bio,
+  .bio-responsive-hijo-7 .imagen-bio,
+  .bio-responsive-hijo-8 .imagen-bio {
+    max-width: 320px;
+  }
+}
+/*responsive para que se apilen en pantallas más chicas*/
+@media screen and (max-width: 768px) {
+  .bio-container-padre {
+    flex-direction: column; /* alineado vertical*/
+    align-items: center; /* centrado horizontal de los ítems*/
+  }
+  .bio-responsive-hijo-1,
+  .bio-responsive-hijo-2,
+  .bio-responsive-hijo-3,
+  .bio-responsive-hijo-4,
+  .bio-responsive-hijo-5,
+  .bio-responsive-hijo-6,
+  .bio-responsive-hijo-7,
+  .bio-responsive-hijo-8 {
+    flex: 1 1 calc(100% - 20px); /* ancho másximo con margen*/
+    margin: 10px 0; /* ajuste de margen entre elementos*/
+  }
+}
+
+/*10.11.23. Responsive screens:*/
+/*PC ESCRITORIO*/
+@media screen and (min-width: 769px) {
+  .bio-contenedor {
+    width: calc(48% - 20px);
+    /*flex-direction: column;
+        align-items: center;
+        justify-content: center;*/
+  }
+}

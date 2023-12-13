@@ -1,0 +1,7 @@
+/*======= Importar todos los CSS =======*/
+@import "partials/_header.css";
+@import "partials/_footer.css";
+@import "partials/_registroClub.css";
+@import "partials/_general.css";
+@import "partials/_main.css";
+@import "partials/_variables.css"
