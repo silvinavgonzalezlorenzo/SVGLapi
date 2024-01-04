@@ -17,7 +17,7 @@ class Catalogo:
         self.conn = mysql.connector.connect(
             host = host, # "localhost",
             user = user, # "root",
-            password = password, # "Pepino+Milucito@2011-2023@",
+            password = password, # "        ",
             database= database, # "sistemaclub"
         )
         self.cursor = self.conn.cursor()
@@ -64,7 +64,7 @@ class Catalogo:
 ####################################################
 # PROGRAMA PRINCIPAL
 
-catalogo = Catalogo(host='localhost', user='root', password='Pepino+Milucito@2011-2023@', database='sistemaclub')
+catalogo = Catalogo(host='localhost', user='root', password='          ', database='sistemaclub')
 
 @app.route("/socios", methods=["POST"]) #ESTO ES UN DECORADOR
 def agregar_socio():
